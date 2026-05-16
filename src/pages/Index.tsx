@@ -149,14 +149,14 @@ const Index = () => {
                 <Phone size={20} />
               </div>
               <h3 className="font-heading font-semibold text-foreground mb-2">Phone</h3>
-              <p className="text-sm text-muted-foreground">+91 00000 00000</p>
+              <p className="text-sm text-muted-foreground">+91 92652 30643</p>
             </div>
             <div className="bg-card p-8 rounded-sm shadow-soft text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
                 <Mail size={20} />
               </div>
               <h3 className="font-heading font-semibold text-foreground mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground">info@rameshwarinternational.com</p>
+              <p className="text-sm text-muted-foreground">rameshwarinternational01@gmail.com</p>
             </div>
           </div>
         </div>
