@@ -1,184 +1,163 @@
-import { Link } from "react-router-dom";
-import { Leaf, Shield, Feather, Palette, Building2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import hexagonLayout from "@/assets/hexagon-layout.jpg";
-import productHexagon from "@/assets/product-hexagon.jpg";
-import productConcrete from "@/assets/product-concrete.jpg";
-import productTextured from "@/assets/product-textured.jpg";
-import product3dAccent from "@/assets/product-3d-accent.jpg";
-import appLivingRoom from "@/assets/app-living-room.jpg";
-import appOffice from "@/assets/app-office.jpg";
-import appHospitality from "@/assets/app-hospitality.jpg";
-import appRetail from "@/assets/app-retail.jpg";
-import appFeatureWall from "@/assets/app-feature-wall.jpg";
+import { MapPin, Phone, Mail, Leaf, Globe2, ShieldCheck, Award } from "lucide-react";
+import heroBg from "@/assets/rameshwar-hero.jpg";
+import cumin from "@/assets/spice-cumin.jpg";
+import coriander from "@/assets/spice-coriander.jpg";
+import sesame from "@/assets/spice-sesame.jpg";
+import pigeon from "@/assets/spice-pigeon-peas.jpg";
+import fenugreek from "@/assets/spice-fenugreek.jpg";
 
-const featuredProducts = [
-  { name: "Hexagon Panels", desc: "Authentic concrete hexagons with natural texture variations.", image: productHexagon, slug: "hex-concrete-natural" },
-  { name: "Concrete Finish", desc: "Seamless cement surfaces with warm, consistent tones.", image: productConcrete, slug: "smooth-cement-finish" },
-  { name: "Textured Panels", desc: "Geometric relief patterns that play with light and shadow.", image: productTextured, slug: "diamond-relief-panel" },
-  { name: "3D Accent Panels", desc: "Bold architectural blocks for dramatic statement walls.", image: product3dAccent, slug: "architectural-accent-block" },
+const products = [
+  {
+    name: "Cumin Seeds",
+    botanical: "Cuminum cyminum",
+    desc: "Aromatic, warm and earthy seeds — a cornerstone of Indian and global cuisine. Sourced from Gujarat's finest harvests.",
+    image: cumin,
+  },
+  {
+    name: "Coriander Seeds",
+    botanical: "Coriandrum sativum",
+    desc: "Mild, citrus-sweet seeds prized for curry powders, pickles, and seasoning blends across the world.",
+    image: coriander,
+  },
+  {
+    name: "Sesame Seeds",
+    botanical: "Sesamum indicum",
+    desc: "Premium hulled and natural sesame — rich in oil content and ideal for bakery, confectionery, and tahini production.",
+    image: sesame,
+  },
+  {
+    name: "Pigeon Peas (Toor Dal)",
+    botanical: "Cajanus cajan",
+    desc: "Protein-rich pulses, hand-cleaned and machine-sorted to deliver consistent grain size and superior cooking quality.",
+    image: pigeon,
+  },
+  {
+    name: "Fenugreek Seeds",
+    botanical: "Trigonella foenum-graecum",
+    desc: "Bittersweet, golden seeds known for their distinctive aroma — widely used in spice blends and traditional medicine.",
+    image: fenugreek,
+  },
 ];
 
-const whyChooseUs = [
-  { icon: Leaf, title: "Natural Composition", desc: "Crafted from natural materials for authentic texture." },
-  { icon: Shield, title: "Durable & Long-Lasting", desc: "Engineered for 25+ years of beautiful performance." },
-  { icon: Feather, title: "Lightweight & Easy Install", desc: "Simple adhesive mounting, no structural changes needed." },
-  { icon: Palette, title: "Custom Design Capability", desc: "Bespoke colors, patterns, and dimensions available." },
-  { icon: Building2, title: "Residential & Commercial", desc: "Versatile solutions for any interior environment." },
-];
-
-const applications = [
-  { name: "Living Rooms", desc: "Create warm, textured spaces that invite conversation.", image: appLivingRoom },
-  { name: "Offices", desc: "Professional environments with architectural character.", image: appOffice },
-  { name: "Hospitality", desc: "Memorable lobbies and spaces that impress guests.", image: appHospitality },
-  { name: "Retail Spaces", desc: "Distinctive storefronts that elevate brand presence.", image: appRetail },
-  { name: "Feature Walls", desc: "Focal points that define and anchor interior design.", image: appFeatureWall },
+const features = [
+  { icon: Leaf, title: "Farm Fresh", desc: "Directly sourced from Gujarat's most trusted farms." },
+  { icon: ShieldCheck, title: "Quality Assured", desc: "Multi-stage cleaning, sorting and lab testing." },
+  { icon: Globe2, title: "Global Export", desc: "Reliable shipping to clients across continents." },
+  { icon: Award, title: "Trusted Partner", desc: "Years of expertise in agri-commodity trade." },
 ];
 
 const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="Hexagonal decorative wall panels in concrete and blue-grey tones" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-charcoal/50" />
+          <img src={heroBg} alt="Assorted Indian spices, seeds and pulses by Rameshwar International" className="w-full h-full object-cover" width={1920} height={1024} />
+          <div className="absolute inset-0 bg-charcoal/55" />
         </div>
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto py-24">
+          <p className="text-sm font-heading font-semibold text-charcoal-foreground/80 uppercase tracking-[0.3em] mb-6">Rameshwar International</p>
           <h1 className="heading-display text-charcoal-foreground mb-6">
-            Natural Surfaces.<br />Timeless Design.
+            We Grow Quality,<br />We Harvest Trust.
           </h1>
           <p className="body-large text-charcoal-foreground/80 mb-10">
-            Premium decorative wall panels crafted for residential and commercial interiors.
+            Exporters of premium Indian spices, seeds and pulses — sourced from the heart of Gujarat.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/products" className="bg-primary text-primary-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
-              Explore Collection
-            </Link>
-            <Link to="/request-quote" className="border border-charcoal-foreground/30 text-charcoal-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-charcoal-foreground/10 transition-colors">
-              Request Sample
-            </Link>
+            <a href="#products" className="bg-primary text-primary-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
+              Explore Products
+            </a>
+            <a href="#contact" className="border border-charcoal-foreground/30 text-charcoal-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-charcoal-foreground/10 transition-colors">
+              Get in Touch
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Brand Intro */}
-      <section className="section-padding">
-        <div className="container-wide mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">About SurfaceCraft</p>
-            <h2 className="heading-section text-foreground mb-6">Where Nature Meets Architecture</h2>
-            <p className="body-base text-muted-foreground mb-4">
-              Our panels bring the authentic beauty of natural materials to modern interiors. Each surface tells a story of texture, craftsmanship, and design precision.
-            </p>
-            <p className="body-base text-muted-foreground mb-4">
-              Unlike artificial tiles, our panels deliver superior depth and character. They work beautifully as highlight panels alongside ceramic, stone, and painted surfaces.
-            </p>
-            <p className="body-base text-muted-foreground">
-              From residential feature walls to commercial lobbies, SurfaceCraft transforms ordinary spaces into extraordinary experiences.
-            </p>
-          </div>
-          <div className="rounded-sm overflow-hidden shadow-card">
-            <img src={hexagonLayout} alt="Hexagonal panel arrangement in grey and blue tones" className="w-full h-auto" loading="lazy" />
-          </div>
+      {/* About */}
+      <section id="about" className="section-padding">
+        <div className="container-wide mx-auto max-w-4xl text-center">
+          <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">About Us</p>
+          <h2 className="heading-section text-foreground mb-6">Rooted in Gujarat, Trusted Worldwide</h2>
+          <p className="body-base text-muted-foreground mb-4">
+            Rameshwar International is a Rajkot-based exporter of high-quality agricultural commodities. From the rich soils of Gujarat, we bring the world a curated range of spices, seeds and pulses — each batch cleaned, graded and packed to meet global standards.
+          </p>
+          <p className="body-base text-muted-foreground">
+            Our commitment is simple: consistent quality, transparent dealings, and on-time delivery for every customer, every time.
+          </p>
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Features */}
       <section className="section-padding bg-surface">
         <div className="container-wide mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">Our Collection</p>
-            <h2 className="heading-section text-foreground">Featured Products</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((f) => (
+              <div key={f.title} className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4">
+                  <f.icon size={24} />
+                </div>
+                <h3 className="font-heading font-semibold text-sm text-foreground mb-2">{f.title}</h3>
+                <p className="text-sm text-muted-foreground">{f.desc}</p>
+              </div>
+            ))}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredProducts.map((product) => (
-              <div key={product.name} className="bg-card rounded-sm overflow-hidden shadow-soft hover:shadow-card transition-shadow group">
-                <div className="aspect-square overflow-hidden">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+      </section>
+
+      {/* Products */}
+      <section id="products" className="section-padding">
+        <div className="container-wide mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">Our Products</p>
+            <h2 className="heading-section text-foreground">Premium Agricultural Exports</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((p) => (
+              <article key={p.name} className="bg-card rounded-sm overflow-hidden shadow-soft hover:shadow-card transition-shadow group">
+                <div className="aspect-square overflow-hidden bg-muted">
+                  <img src={p.image} alt={p.name} width={800} height={800} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-heading font-semibold text-foreground mb-2">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{product.desc}</p>
-                  <Link to={`/products/${product.slug}`} className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                    View Details →
-                  </Link>
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-1">{p.name}</h3>
+                  <p className="text-xs italic text-muted-foreground mb-3">{p.botanical}</p>
+                  <p className="text-sm text-muted-foreground">{p.desc}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding">
-        <div className="container-wide mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">Why SurfaceCraft</p>
-            <h2 className="heading-section text-foreground">Designed to Perform</h2>
+      {/* Contact */}
+      <section id="contact" className="section-padding bg-surface">
+        <div className="container-wide mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">Get in Touch</p>
+            <h2 className="heading-section text-foreground">Let's Build a Partnership</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-            {whyChooseUs.map((item) => (
-              <div key={item.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4">
-                  <item.icon size={24} />
-                </div>
-                <h3 className="font-heading font-semibold text-sm text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-card p-8 rounded-sm shadow-soft text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                <MapPin size={20} />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Applications Preview */}
-      <section className="section-padding bg-surface">
-        <div className="container-wide mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-heading font-semibold text-primary uppercase tracking-widest mb-4">Applications</p>
-            <h2 className="heading-section text-foreground">Designed For Every Space</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {applications.slice(0, 3).map((app) => (
-              <div key={app.name} className="relative rounded-sm overflow-hidden group h-72">
-                <img src={app.image} alt={app.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-heading font-semibold text-charcoal-foreground mb-1">{app.name}</h3>
-                  <p className="text-sm text-charcoal-foreground/80">{app.desc}</p>
-                </div>
+              <h3 className="font-heading font-semibold text-foreground mb-2">Address</h3>
+              <p className="text-sm text-muted-foreground">Rajkot Marketing Yard,<br />Rajkot, Gujarat, India</p>
+            </div>
+            <div className="bg-card p-8 rounded-sm shadow-soft text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                <Phone size={20} />
               </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-            {applications.slice(3).map((app) => (
-              <div key={app.name} className="relative rounded-sm overflow-hidden group h-72">
-                <img src={app.image} alt={app.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-heading font-semibold text-charcoal-foreground mb-1">{app.name}</h3>
-                  <p className="text-sm text-charcoal-foreground/80">{app.desc}</p>
-                </div>
+              <h3 className="font-heading font-semibold text-foreground mb-2">Phone</h3>
+              <p className="text-sm text-muted-foreground">+91 00000 00000</p>
+            </div>
+            <div className="bg-card p-8 rounded-sm shadow-soft text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                <Mail size={20} />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="section-padding">
-        <div className="container-narrow mx-auto text-center">
-          <h2 className="heading-section text-foreground mb-4">Transform Your Walls Today</h2>
-          <p className="body-base text-muted-foreground mb-10 max-w-xl mx-auto">
-            Discover the perfect panel for your project. Our team is ready to help you create something extraordinary.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/request-quote" className="bg-primary text-primary-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
-              Get a Quote
-            </Link>
-            <Link to="/contact" className="border border-border text-foreground px-8 py-3 rounded-sm font-heading text-sm font-medium tracking-wide hover:bg-muted transition-colors">
-              Contact Us
-            </Link>
+              <h3 className="font-heading font-semibold text-foreground mb-2">Email</h3>
+              <p className="text-sm text-muted-foreground">info@rameshwarinternational.com</p>
+            </div>
           </div>
         </div>
       </section>
