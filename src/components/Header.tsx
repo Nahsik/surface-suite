@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/rameshwar-logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -15,8 +16,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-wide mx-auto flex items-center justify-between h-16 px-6 lg:px-20">
-        <Link to="/" className="font-heading text-base sm:text-lg font-semibold tracking-tight text-foreground">
-          Rameshwar International
+        <Link to="/" className="flex items-center gap-3 font-heading text-base sm:text-lg font-semibold tracking-tight text-foreground">
+          <img src={logo} alt="Rameshwar International logo" className="h-9 w-9 rounded-sm object-cover bg-charcoal" />
+          <span>Rameshwar International</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

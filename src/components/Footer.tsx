@@ -1,9 +1,14 @@
+import logo from "@/assets/rameshwar-logo.jpeg";
+
 const Footer = () => (
   <footer className="bg-charcoal text-charcoal-foreground">
     <div className="container-wide mx-auto section-padding">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <h3 className="font-heading text-lg font-semibold mb-4">Rameshwar International</h3>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Rameshwar International logo" className="h-10 w-10 rounded-sm object-cover" />
+            <h3 className="font-heading text-lg font-semibold">Rameshwar International</h3>
+          </div>
           <p className="text-sm text-charcoal-foreground/70 leading-relaxed">
             Exporters of premium Indian spices, seeds and pulses from Gujarat to the world.
           </p>
@@ -23,7 +28,8 @@ const Footer = () => (
           <div className="space-y-2 text-sm text-charcoal-foreground/70">
             <p>Rajkot Marketing Yard</p>
             <p>Rajkot, Gujarat, India</p>
-            <p>info@rameshwarinternational.com</p>
+            <p>rameshwarinternational01@gmail.com</p>
+            <p>+91 92652 30643</p>
           </div>
         </div>
       </div>
