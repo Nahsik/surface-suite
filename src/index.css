@@ -4,43 +4,43 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 18%;
+    --background: 30 20% 98%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 18%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 155 29% 34%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 25 88% 52%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 15% 92%;
-    --secondary-foreground: 0 0% 18%;
+    --secondary: 30 15% 94%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 200 10% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 30 10% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 200 20% 69%;
-    --accent-foreground: 0 0% 18%;
+    --accent: 25 88% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 155 29% 34%;
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 25 88% 52%;
 
     --radius: 0.375rem;
 
     /* Custom brand tokens */
-    --concrete: 0 0% 85.5%;
-    --concrete-foreground: 0 0% 18%;
-    --blue-grey: 200 20% 69%;
-    --charcoal: 0 0% 18%;
+    --concrete: 0 0% 12%;
+    --concrete-foreground: 0 0% 98%;
+    --blue-grey: 25 88% 52%;
+    --charcoal: 0 0% 6%;
     --charcoal-foreground: 0 0% 98%;
-    --surface: 0 0% 96%;
+    --surface: 30 15% 96%;
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
