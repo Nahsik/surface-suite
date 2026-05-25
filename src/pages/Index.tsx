@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Leaf, ArrowRight, Sprout, ShieldCheck, FlaskConical, Layers, Truck, Package, MapPin, Phone, Mail } from "lucide-react";
+import { Leaf, ArrowRight, Sprout, ShieldCheck, FlaskConical, Layers, Truck, Package, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/rameshwar-hero.jpg";
 import cumin from "@/assets/spice-cumin.jpg";
 import coriander from "@/assets/spice-coriander.jpg";
@@ -62,17 +61,6 @@ const whyUs = [
 ];
 
 const Index = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Inquiry from ${form.name || "website"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nProduct: ${form.product}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:rameshwarinternational01@gmail.com?subject=${subject}&body=${body}`;
-  };
-
   return (
     <div>
       {/* Hero */}
@@ -224,7 +212,7 @@ const Index = () => {
                 Let's talk about your <span className="accent-italic">requirement.</span>
               </h2>
               <p className="body-base text-muted-foreground mb-10">
-                Share your product, quantity and destination — we'll respond with samples, grades and competitive quotes within 24 hours.
+                Reach out directly for samples, grades and competitive quotes — we respond within 24 hours.
               </p>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
@@ -248,41 +236,16 @@ const Index = () => {
                     <a href="mailto:rameshwarinternational01@gmail.com" className="text-sm text-foreground hover:text-primary break-all">rameshwarinternational01@gmail.com</a>
                   </div>
                 </div>
+                <a
+                  href="https://wa.me/919265230643"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-body text-sm font-medium hover:bg-primary/90 transition-colors mt-4"
+                >
+                  <MessageCircle size={16} /> Chat on WhatsApp
+                </a>
               </div>
             </div>
-
-            <form onSubmit={onSubmit} className="bg-card border border-border rounded-sm p-8 space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">Your Name</label>
-                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-background border border-border rounded-sm px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary" />
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">Email</label>
-                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full bg-background border border-border rounded-sm px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary" />
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">Phone</label>
-                  <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-background border border-border rounded-sm px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary" />
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">Product of Interest</label>
-                  <select value={form.product} onChange={(e) => setForm({ ...form, product: e.target.value })} className="w-full bg-background border border-border rounded-sm px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary">
-                    <option value="">Select a product</option>
-                    {products.map((p) => <option key={p.name} value={p.name}>{p.name}</option>)}
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">Message</label>
-                <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full bg-background border border-border rounded-sm px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary resize-none" />
-              </div>
-              <button type="submit" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-body text-sm font-medium hover:bg-primary/90 transition-colors">
-                Send Inquiry <ArrowRight size={16} />
-              </button>
-            </form>
           </div>
         </div>
       </section>
