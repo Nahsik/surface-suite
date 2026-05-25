@@ -62,17 +62,6 @@ const whyUs = [
 ];
 
 const Index = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Inquiry from ${form.name || "website"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nProduct: ${form.product}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:rameshwarinternational01@gmail.com?subject=${subject}&body=${body}`;
-  };
-
   return (
     <div>
       {/* Hero */}
