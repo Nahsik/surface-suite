@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Leaf, ArrowRight, Sprout, ShieldCheck, FlaskConical, Layers, Truck, Package, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/rameshwar-hero.jpg";
 import cumin from "@/assets/spice-cumin.jpg";
