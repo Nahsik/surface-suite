@@ -42,7 +42,7 @@
     --charcoal-foreground: 30 15% 96%;
     --surface: 0 0% 9%;
 
-    --font-heading: 'Montserrat', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Inter', sans-serif;
 
     --shadow-soft: 0 2px 20px -4px hsl(0 0% 0% / 0.08);
@@ -98,17 +98,27 @@
 
   .heading-display {
     font-family: var(--font-heading);
-    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight;
+    @apply text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.05];
   }
 
   .heading-section {
     font-family: var(--font-heading);
-    @apply text-3xl md:text-4xl font-light tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05];
   }
 
   .heading-sub {
     font-family: var(--font-heading);
-    @apply text-xl md:text-2xl font-medium tracking-tight;
+    @apply text-2xl md:text-3xl font-medium tracking-tight;
+  }
+
+  .accent-italic {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: hsl(var(--primary));
+  }
+
+  .eyebrow {
+    @apply text-xs font-body font-medium uppercase tracking-[0.25em] text-primary;
   }
 
   .body-large {
